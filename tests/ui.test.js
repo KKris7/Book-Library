@@ -167,6 +167,7 @@ test('Verify visibility of Logout button after user login', async ({ page }) => 
   await page.fill('input[name="email"]', 'peter@abv.bg');
   await page.fill('input[name="password"]', '123456');
   await page.click('input[type="submit"]');
+  await page.waitFor(logoutLink);
 
   const logoutLink = await page.$('a[href="javascript:void(0)"]');
 
